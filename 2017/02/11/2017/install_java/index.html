@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/11/2017/install_java/index.html">
 <meta property="og:site_name" content="lizm的博客">
 <meta property="og:description" content="概述本文安装jdk、memcached、redis、msqyl、nginx[openresty]、node、hexo、git 还有一些其他命令的安装">
-<meta property="og:updated_time" content="2018-02-28T03:51:42.912Z">
+<meta property="og:updated_time" content="2018-03-13T01:54:57.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新机器安装服务">
 <meta name="twitter:description" content="概述本文安装jdk、memcached、redis、msqyl、nginx[openresty]、node、hexo、git 还有一些其他命令的安装">
@@ -347,6 +347,7 @@
 </blockquote>
 </li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ25qy3yxgbZ mysql]# bin/mysqld –defaults-file=/usr/local/mysql/data3306/my_3306.cnf –initialize</span><br><span class="line">bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory</span><br><span class="line"></span><br><span class="line">解决办法:</span><br><span class="line">[root@iZ25qy3yxgbZ mysql]# yum install -y libaio</span><br></pre></td></tr></table></figure>
 <h1 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h1><ol>
 <li><p>我用的是openresty,下载/usr/local:</p>
 <blockquote>
@@ -661,6 +662,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">liunx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -674,14 +683,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SERVER</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">liunx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
