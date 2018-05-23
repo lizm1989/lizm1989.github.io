@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>查看服务器mongodb版本、32位或者64位 | lizm的博客</title>
+  <title>lizm的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
-<meta name="keywords" content="NoSql">
-<meta property="og:type" content="article">
-<meta property="og:title" content="查看服务器mongodb版本、32位或者64位">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/2016/mongo_version/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lizm的博客">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="lizm的博客">
-<meta property="og:description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
-<meta property="og:updated_time" content="2018-05-23T02:11:03.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="查看服务器mongodb版本、32位或者64位">
-<meta name="twitter:description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
+<meta name="twitter:title" content="lizm的博客">
   
     <link rel="alternative" href="/atom.xml" title="lizm的博客" type="application/atom+xml">
   
@@ -136,62 +131,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016/mongo_version" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-2015/SQL-INSERT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      查看服务器mongodb版本、32位或者64位
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/17/2015/SQL-INSERT/">SELECT INTO 和 INSERT INTO SELECT 两种表复制语句</a>
     </h1>
   
 
         
-        <a href="/2016/07/25/2016/mongo_version/" class="archive-article-date">
-  	<time datetime="2016-07-25T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-25</time>
+        <a href="/2015/11/17/2015/SQL-INSERT/" class="archive-article-date">
+  	<time datetime="2015-11-17T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一步连接mongo服务"><a href="#第一步连接mongo服务" class="headerlink" title="第一步连接mongo服务"></a>第一步连接mongo服务</h2><pre>
-
-$ /usr/local/mongodb/bin/mongo --port 4066
-
-</pre>
-
-
-<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><pre>
-1、 use admin;
-2、 db.runCommand("buildInfo")
-
-
-mongos> use admin;
-switched to db admin
-mongos> db.runCommand("buildInfo")
-{
-    "version" : "3.0.2",
-    "gitVersion" : "6201872043ecbbc0a4cc169b5482dcf385fc464f",
-    "OpenSSLVersion" : "",
-    "sysInfo" : "Linux build6.nj1.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49",
-    "loaderFlags" : "-fPIC -pthread -Wl,-z,now -rdynamic",
-    "compilerFlags" : "-Wnon-virtual-dtor -Woverloaded-virtual -std=c++11 -fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch -pipe -Werror -O3 -Wno-unused-local-typedefs -Wno-unused-function -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-missing-braces -fno-builtin-memcmp -std=c99",
-    "allocator" : "tcmalloc",
-    "versionArray" : [
-        3,
-        0,
-        2,
-        0
-    ],
-    "javascriptEngine" : "V8",
-    "bits" : 64,
-    "debug" : false,
-    "maxBsonObjectSize" : 16777216,
-    "ok" : 1
-}
-</pre>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们在开发、测试过程中，经常会遇到需要表复制的情况，如将一个table1的数据的部分字段复制到table2中，或者将整个table1复制到table2中，这时候我们就要使用SELECT INTO 和 INSERT INTO SELECT 表复制语句了。</p>
+        
+          <a class="article-more-a" href="/2015/11/17/2015/SQL-INSERT/#more">more >></a>
+        
       
 
       
@@ -204,7 +169,7 @@ mongos> db.runCommand("buildInfo")
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NoSql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
@@ -224,84 +189,16 @@ mongos> db.runCommand("buildInfo")
 
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/11/17/2015/SQL-INSERT/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/07/25/2016/mongo_version/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/07/26/2016/nginx_alias/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nginx alias
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/07/04/2016/weixin_develop/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信开发</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -321,14 +218,12 @@ mongos> db.runCommand("buildInfo")
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
   
 
 
@@ -355,8 +250,8 @@ mongos> db.runCommand("buildInfo")
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

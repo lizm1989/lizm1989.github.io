@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>查看服务器mongodb版本、32位或者64位 | lizm的博客</title>
+  <title>guava | lizm的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
-<meta name="keywords" content="NoSql">
+  <meta name="description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="查看服务器mongodb版本、32位或者64位">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/2016/mongo_version/index.html">
+<meta property="og:title" content="guava">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/2018/guava/index.html">
 <meta property="og:site_name" content="lizm的博客">
-<meta property="og:description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
-<meta property="og:updated_time" content="2018-05-23T02:11:03.079Z">
+<meta property="og:description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
+<meta property="og:updated_time" content="2018-05-23T02:11:03.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="查看服务器mongodb版本、32位或者64位">
-<meta name="twitter:description" content="第一步连接mongo服务  $ /usr/local/mongodb/bin/mongo --port 4066     运行命令 1、 use admin; 2、 db.runCommand(&quot;buildInfo&quot;)   mongos&amp;gt; use admin; switched to db admin mongos&amp;gt; db.runCommand(&quot;buildInfo&quot;) {     &quot;versio">
+<meta name="twitter:title" content="guava">
+<meta name="twitter:description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
   
     <link rel="alternative" href="/atom.xml" title="lizm的博客" type="application/atom+xml">
   
@@ -136,62 +135,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016/mongo_version" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2018/guava" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      查看服务器mongodb版本、32位或者64位
+      guava
     </h1>
   
 
         
-        <a href="/2016/07/25/2016/mongo_version/" class="archive-article-date">
-  	<time datetime="2016-07-25T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-25</time>
+        <a href="/2017/02/16/2018/guava/" class="archive-article-date">
+  	<time datetime="2017-02-16T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一步连接mongo服务"><a href="#第一步连接mongo服务" class="headerlink" title="第一步连接mongo服务"></a>第一步连接mongo服务</h2><pre>
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p> guava由谷歌提供的工具类，代码简洁、高效。</p>
+<p> 开发中偶尔使用可以提高生产力，节约时间。</p>
+<a id="more"></a>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><h4 id="将list集合转换特定规则字符串"><a href="#将list集合转换特定规则字符串" class="headerlink" title="将list集合转换特定规则字符串"></a>将list集合转换特定规则字符串</h4><pre>
+List<string> list = new ArrayList<string>();
+list.add("张三");
+list.add("李四");
+list.add("王五");
+String result = Joiner.on("-").join(list);
+//result     张三-李四-王五
+</string></string></pre>
 
-$ /usr/local/mongodb/bin/mongo --port 4066
+<h4 id="把map集合转换为特定规则的字符串"><a href="#把map集合转换为特定规则的字符串" class="headerlink" title="把map集合转换为特定规则的字符串"></a>把map集合转换为特定规则的字符串</h4><pre>
+Map<string,integer> map=new HashMap<string,integer>();
+map.put("张三",19);
+map.put("李四",20);
+map.put("王五",21);
 
-</pre>
+String result = Joiner.on(",").withKeyValueSeparator("=").join(map);
+System.out.println("result=>"+result);
 
+result=>李四=20,张三=19,王五=21
+</string,integer></string,integer></pre>
 
-<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><pre>
-1、 use admin;
-2、 db.runCommand("buildInfo")
-
-
-mongos> use admin;
-switched to db admin
-mongos> db.runCommand("buildInfo")
-{
-    "version" : "3.0.2",
-    "gitVersion" : "6201872043ecbbc0a4cc169b5482dcf385fc464f",
-    "OpenSSLVersion" : "",
-    "sysInfo" : "Linux build6.nj1.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49",
-    "loaderFlags" : "-fPIC -pthread -Wl,-z,now -rdynamic",
-    "compilerFlags" : "-Wnon-virtual-dtor -Woverloaded-virtual -std=c++11 -fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch -pipe -Werror -O3 -Wno-unused-local-typedefs -Wno-unused-function -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-missing-braces -fno-builtin-memcmp -std=c99",
-    "allocator" : "tcmalloc",
-    "versionArray" : [
-        3,
-        0,
-        2,
-        0
-    ],
-    "javascriptEngine" : "V8",
-    "bits" : 64,
-    "debug" : false,
-    "maxBsonObjectSize" : 16777216,
-    "ok" : 1
-}
-</pre>
       
 
       
@@ -199,29 +186,7 @@ mongos> db.runCommand("buildInfo")
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NoSql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -271,7 +236,7 @@ mongos> db.runCommand("buildInfo")
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/07/25/2016/mongo_version/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/02/16/2018/guava/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +250,18 @@ mongos> db.runCommand("buildInfo")
   
 <nav id="article-nav">
   
-    <a href="/2016/07/26/2016/nginx_alias/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/16/2017/guava/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          nginx alias
+          guava
         
       </div>
     </a>
   
   
-    <a href="/2016/07/04/2016/weixin_develop/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信开发</div>
+    <a href="/2017/02/11/2017/install_java/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新机器安装服务</div>
       <i class="icon-circle-right"></i>
     </a>
   

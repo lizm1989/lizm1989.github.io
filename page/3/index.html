@@ -133,6 +133,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2016/js_get_weixin_openid" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/2016/js_get_weixin_openid/">js获取微信openid</a>
+    </h1>
+  
+
+        
+        <a href="/2016/09/06/2016/js_get_weixin_openid/" class="archive-article-date">
+  	<time datetime="2016-09-06T03:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="目前状态"><a href="#目前状态" class="headerlink" title="目前状态"></a>目前状态</h2><pre><code>最近在做微信的一些活动，流程大致是：
+前端给页面，后台开发接口然后根据页面套业务逻辑。
+效率不高，主要有2个原因：
+1、前端页面逻辑较复杂，开发拿到后需要理解一些里面的页面逻辑，比较耗时。
+2、活动周期短、接口都很简单。
+</code></pre><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><pre><code>开发提供接口业务逻辑接口，前端直接套
+这里就涉及到要拿唯一的openid，【即js获取openid】。
+</code></pre>
+        
+          <a class="article-more-a" href="/2016/09/06/2016/js_get_weixin_openid/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/09/06/2016/js_get_weixin_openid/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2016/browser-back-to-refresh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -965,108 +1059,9 @@ mongos> db.runCommand("buildInfo")
 
 
   
-    <article id="post-2016/jedis_pool" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/22/2016/jedis_pool/">jedis 2.1版本连接池问题</a>
-    </h1>
-  
-
-        
-        <a href="/2016/04/22/2016/jedis_pool/" class="archive-article-date">
-  	<time datetime="2016-04-22T11:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/xetorthio/jedis/issues/186" target="_blank" rel="noopener">参考文章github</a></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>Redis上线都好久，最近一段时间时不时就蹦出一些错误出来，让人很心烦。<br>错误如下：</p>
-<pre>
-java.lang.ClassCastException: java.lang.Long cannot be cast to [B
-        at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:182)
-        at redis.clients.jedis.Connection.getBulkReply(Connection.java:171)
-        at redis.clients.jedis.Jedis.get(Jedis.java:67
-
-java.lang.ClassCastException: java.lang.Long cannot be cast to [B
-        at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:182)
-        at redis.clients.jedis.Connection.getBulkReply(Connection.java:171)
-        at redis.clients.jedis.Jedis.get(Jedis.java:67
-</pre>
-        
-          <a class="article-more-a" href="/2016/04/22/2016/jedis_pool/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NoSql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/22/2016/jedis_pool/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
