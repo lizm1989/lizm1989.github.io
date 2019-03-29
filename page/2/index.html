@@ -133,6 +133,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017/nginx-start" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/2017/nginx-start/">nginx启动脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/17/2017/nginx-start/" class="archive-article-date">
+  	<time datetime="2017-02-17T13:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常规启动"><a href="#常规启动" class="headerlink" title="常规启动"></a>常规启动</h1><pre><code>&gt;/usr/local/openresty/nginx/nginx/sbin/nginx -c /usr/local/openresty/nginx/nginx/conf/nginx.conf
+</code></pre><h1 id="配置脚本启动"><a href="#配置脚本启动" class="headerlink" title="配置脚本启动"></a>配置脚本启动</h1><pre>
+安装路径：/usr/local/openresty/nginx 
+把nginx脚本文件放在 /etc/rc.d/init.d/ 目录下,脚本在最下面
+
+增加服务并开机启动
+# touch /etc/init.d/nginx
+# chmod +x /etc/init.d/nginx
+# chkconfig --add nginx
+# chkconfig --level 345 nginx on
+# chkconfig --list nginx
+</pre>
+        
+          <a class="article-more-a" href="/2017/02/17/2017/nginx-start/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/17/2017/nginx-start/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2017/memcached-start" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -915,94 +991,6 @@ stat test.txt
 
 
   
-    <article id="post-2016/ngrok_qydev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/30/2016/ngrok_qydev/">内网穿透神器</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/30/2016/ngrok_qydev/" class="archive-article-date">
-  	<time datetime="2016-09-30T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">相信做Web开发的同学们，经常会遇到需要将本地部署的Web应用能够让公网环境直接访问到的情况，</span><br><span class="line">例如微信应用调试、支付宝接口调试等。</span><br><span class="line">这个时候，一个叫ngrok的神器可能会帮到你，但国内建议用【qydev】来替代。</span><br><span class="line">它提供了一个能够在公网安全访问内网Web主机的工具，</span><br><span class="line">能捕获所有HTTP请求的内容，也支持TCP端口映射，支持Linux、Windows、Mac OS X 等平台。</span><br></pre></td></tr></table></figure>
-<h1 id="使用方法步骤"><a href="#使用方法步骤" class="headerlink" title="使用方法步骤"></a>使用方法步骤</h1><p>使用qydev来做实验，已微信调试为例【XP为例】<br>
-        
-          <a class="article-more-a" href="/2016/09/30/2016/ngrok_qydev/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/30/2016/ngrok_qydev/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1104,11 +1092,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SERVER</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">SERVER</a>
               </li>
              
               <li class="article-tag-list-item">
