@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2015/11 | lizm的博客</title>
+  <title>guava | lizm的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lizm的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2015/11/index.html">
+  <meta name="description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="guava">
+<meta property="og:url" content="http://yoursite.com/2018/02/16/2018/guava/index.html">
 <meta property="og:site_name" content="lizm的博客">
+<meta property="og:description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
+<meta property="og:updated_time" content="2021-02-04T11:20:25.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lizm的博客">
+<meta name="twitter:title" content="guava">
+<meta name="twitter:description" content="概述 guava由谷歌提供的工具类，代码简洁、高效。  开发中偶尔使用可以提高生产力，节约时间。">
   
     <link rel="alternative" href="/atom.xml" title="lizm的博客" type="application/atom+xml">
   
@@ -131,169 +135,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2018/guava" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      guava
+    </h1>
+  
+
+        
+        <a href="/2018/02/16/2018/guava/" class="archive-article-date">
+  	<time datetime="2018-02-16T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p> guava由谷歌提供的工具类，代码简洁、高效。</p>
+<p> 开发中偶尔使用可以提高生产力，节约时间。</p>
+<a id="more"></a>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><h4 id="将list集合转换特定规则字符串"><a href="#将list集合转换特定规则字符串" class="headerlink" title="将list集合转换特定规则字符串"></a>将list集合转换特定规则字符串</h4><pre>
+List<string> list = new ArrayList<string>();
+list.add("张三");
+list.add("李四");
+list.add("王五");
+String result = Joiner.on("-").join(list);
+//result     张三-李四-王五
+</string></string></pre>
+
+<h4 id="把map集合转换为特定规则的字符串"><a href="#把map集合转换为特定规则的字符串" class="headerlink" title="把map集合转换为特定规则的字符串"></a>把map集合转换为特定规则的字符串</h4><pre>
+Map<string,integer> map=new HashMap<string,integer>();
+map.put("张三",19);
+map.put("李四",20);
+map.put("王五",21);
+
+String result = Joiner.on(",").withKeyValueSeparator("=").join(map);
+System.out.println("result=>"+result);
+
+result=>李四=20,张三=19,王五=21
+</string,integer></string,integer></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/17/2016/develop/" class="archive-article-date">
-  	<time datetime="2015-11-17T07:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/17/2016/develop/">开发常用地址</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/02/16/2018/guava/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/17/2015/SQL-INSERT/" class="archive-article-date">
-  	<time datetime="2015-11-17T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/29/2019/dubbo_telnet/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          dubbo telnet
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/17/2017/arr_to_arraylist/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA 将数组转List</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/17/2015/SQL-INSERT/">SELECT INTO 和 INSERT INTO SELECT 两种表复制语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/17/2015/markdown/" class="archive-article-date">
-  	<time datetime="2015-11-17T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/17/2015/markdown/">markdown学习</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -320,8 +321,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
