@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>nginx限制IP | lizm的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="allow 116.213.171.174; deny all;    参考">
+  <meta name="description" content="location / {    index  index.html index.htm index.php;    allow 116.213.171.174;    deny all;      location / {       xxxx     } }    参考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx限制IP">
 <meta property="og:url" content="http://yoursite.com/2016/03/04/2016/nginx_stop_ip/index.html">
 <meta property="og:site_name" content="lizm的博客">
-<meta property="og:description" content="allow 116.213.171.174; deny all;    参考">
-<meta property="og:updated_time" content="2018-05-23T02:11:03.081Z">
+<meta property="og:description" content="location / {    index  index.html index.htm index.php;    allow 116.213.171.174;    deny all;      location / {       xxxx     } }    参考">
+<meta property="og:updated_time" content="2021-02-04T11:23:09.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx限制IP">
-<meta name="twitter:description" content="allow 116.213.171.174; deny all;    参考">
+<meta name="twitter:description" content="location / {    index  index.html index.htm index.php;    allow 116.213.171.174;    deny all;      location / {       xxxx     } }    参考">
   
     <link rel="alternative" href="/atom.xml" title="lizm的博客" type="application/atom+xml">
   
@@ -156,8 +156,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <pre>
-allow 116.213.171.174;
-deny all;
+location / {
+   index  index.html index.htm index.php;
+   allow 116.213.171.174;
+   deny all;
+
+    location / {
+      xxxx
+    }
+}
 </pre>
 
 
@@ -367,19 +374,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SERVER</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">liunx</a>
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -387,15 +382,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">liunx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SERVER</a>
               </li>
             
             <div class="clearfix"></div>
