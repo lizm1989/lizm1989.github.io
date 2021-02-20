@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>nginx和tomcat调优 | lizm的博客</title>
+  <title>分布式一致性协议ZAB | lizm的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="nginx和tomcat调优nginx设置nginx工作进程数：根据cput的核数，如果是8核要设置成8，再高时不会提高性能的 。 #the processes worker_processes  8; worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;">
-<meta name="keywords" content="SERVER">
+  <meta name="description" content="分布式一致性协议ZAB(Zookeeper Atomic Broadcast)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx和tomcat调优">
-<meta property="og:url" content="http://yoursite.com/2015/12/09/2015/nginx_tomcat/index.html">
+<meta property="og:title" content="分布式一致性协议ZAB">
+<meta property="og:url" content="http://yoursite.com/2021/02/20/2021/zab/index.html">
 <meta property="og:site_name" content="lizm的博客">
-<meta property="og:description" content="nginx和tomcat调优nginx设置nginx工作进程数：根据cput的核数，如果是8核要设置成8，再高时不会提高性能的 。 #the processes worker_processes  8; worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;">
-<meta property="og:updated_time" content="2018-05-23T02:11:03.040Z">
+<meta property="og:description" content="分布式一致性协议ZAB(Zookeeper Atomic Broadcast)">
+<meta property="og:updated_time" content="2021-02-20T06:47:37.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx和tomcat调优">
-<meta name="twitter:description" content="nginx和tomcat调优nginx设置nginx工作进程数：根据cput的核数，如果是8核要设置成8，再高时不会提高性能的 。 #the processes worker_processes  8; worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;">
+<meta name="twitter:title" content="分布式一致性协议ZAB">
+<meta name="twitter:description" content="分布式一致性协议ZAB(Zookeeper Atomic Broadcast)">
   
     <link rel="alternative" href="/atom.xml" title="lizm的博客" type="application/atom+xml">
   
@@ -136,72 +135,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2015/nginx_tomcat" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2021/zab" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      nginx和tomcat调优
+      分布式一致性协议ZAB
     </h1>
   
 
         
-        <a href="/2015/12/09/2015/nginx_tomcat/" class="archive-article-date">
-  	<time datetime="2015-12-09T07:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-09</time>
+        <a href="/2021/02/20/2021/zab/" class="archive-article-date">
+  	<time datetime="2021-02-20T06:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="nginx和tomcat调优"><a href="#nginx和tomcat调优" class="headerlink" title="nginx和tomcat调优"></a>nginx和tomcat调优</h2><h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><pre><code>设置nginx工作进程数：根据cput的核数，如果是8核要设置成8，再高时不会提高性能的 。
-#the processes
-worker_processes  8;
-worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;
-</code></pre><a id="more"></a>
-<pre>
-设置keep-alive的timeout，如果设置过短会有大量502，499.
- keepalive_timeout  1800;
-</pre>
-
-
-<pre>
-设置headerbuffer，请求头部过小会出现414
-client_header_buffer_size       256k;
-large_client_header_buffers     32 64k;
-</pre>
-
-<pre>
-设置client_max_body_size（请求体的大小）,过小会出现413
-client_max_body_size            8m;
-</pre>
-
-<pre>
-优化location中得proxy参数，避免499错误
-proxy_connect_timeout    60s;//设置与upstream server的连接超时时间
-proxy_send_timeout       60s; //这个指定设置了发送请求给upstream服务器的超时时间
-
-//该指令设置与代理服务器的读超时时间。它决定了nginx会等待多长时间来获得请求的响应;
-proxy_read_timeout       60s; 
-
-proxy_buffer_size             256k;//缓存proxy的响应
-proxy_buffers            32 64k; //缓存proxy的响应
-</pre>
-
-
-<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><pre>
-修改server.xml的参数：增加maxThreads, minSpareThreads, acceptCount, connectionTimeout值.会比默认值有显著提高
-maxThreads：tomcat起动的最大线程数，即同时处理的任务个数，默认值为200
-acceptCount：当tomcat起动的线程数达到最大时，接受排队的请求个数，默认值为100
-minSpareThreads：初始化时候的线程数
-enableLookups：是否反查域名，提高性能应设置false
-
-<connector port="48080" protocol="HTTP/1.1" maxthreads="2000" minsparethreads="128" acceptcount="1000" connectiontimeout="20000" enablelookups="false" redirectport="48443" uriencoding="utf-8">
-
-</connector></pre>
-
+        <p>分布式一致性协议ZAB(Zookeeper Atomic Broadcast)<br><a id="more"></a></p>
+<h3 id="什么是ZAB协议"><a href="#什么是ZAB协议" class="headerlink" title="什么是ZAB协议"></a>什么是ZAB协议</h3><ol>
+<li>ZAB协议全城(Zookeeper Atomic Broadcast),是专门为zookeeper实现分布式协调而设计</li>
+<li>ZAB协议定义：为分布式协调服务zookeeper专门设计支持原子广播和崩溃恢复协议</li>
+<li>基于该协议zookeeper可实现系统架构中各个副本之间的数据一致性。</li>
+</ol>
+<h3 id="ZAB协议两种模式：1：消息广播模式"><a href="#ZAB协议两种模式：1：消息广播模式" class="headerlink" title="ZAB协议两种模式：1：消息广播模式"></a>ZAB协议两种模式：1：消息广播模式</h3><ol>
+<li>客户端发起写请求。</li>
+<li>Leader服务端将客户端的请求转化为事务提案，同时为这个提案分配一个全局自增的ZXID</li>
+<li>Leader与每个Follower之间有一个FIFO的对列，Leader讲消息发送到该队列</li>
+<li>Follower从队列取出消息处理完[写入本地事务日志]后，往leader队列发送ack确认消息</li>
+<li>Leader收到半数以上Follower的ack后[2n+1，接收到&gt;=n+1]，认为改提案成功，则执行commit,发送commit消息。</li>
+</ol>
+<p>其他注意事项：</p>
+<ul>
+<li>Leader收到的提案，生成ZXID是全局自增的id</li>
+<li>Leader与Follower之间有一个FIFO的消息队列，用于异步解耦</li>
+</ul>
+<h3 id="ZAB协议两种模式：2：崩溃恢复"><a href="#ZAB协议两种模式：2：崩溃恢复" class="headerlink" title="ZAB协议两种模式：2：崩溃恢复"></a>ZAB协议两种模式：2：崩溃恢复</h3><p>崩溃恢复要求满足如下2个要求：</p>
+<ol>
+<li>确保已经被Leader提交的提案proposal必须最终被所有的Follower服务器提交。</li>
+<li>确保丢弃已经被Leader提出，但是没有被提交的提案proposal。</li>
+</ol>
+<p>能够确保提交已经被 Leader 提交的事务，同时丢弃已经被跳过的事务。</p>
+<p>根据上述要求，新选举出来的leader不能包含未提交的proposal，即新选举的leader必须都是已经提交了的proposal的follower服务器节点。同时，新选举的leader节点中含有最高的ZXID。这样做的好处就是可以避免了leader服务器检查proposal的提交和丢弃工作。</p>
+<p>leader服务器发生崩溃时分为如下场景：</p>
+<ol>
+<li>Leader在提出proposal时未提交之前崩溃，则经过崩溃恢复之后，新选举的leader一定不能是刚才的leader。因为这个leader存在未提交的proposal。</li>
+<li>Leader在发送commit消息之后，崩溃。即消息已经发送到队列中。经过崩溃恢复之后，参与选举的follower服务器(刚才崩溃的leader有可能已经恢复运行，也属于follower节点范畴)中有的节点已经是消费了队列中所有的commit消息。即该follower节点将会被选举为最新的leader。剩下动作就是数据同步过程。</li>
+</ol>
+<p>数据同步：<br>在zookeeper集群中新的leader选举成功之后，<br>leader会将自身的提交的最大proposal的事物ZXID发送给其他的follower节点。follower节点会根据leader的消息进行回退或者是数据同步操作。最终目的要保证集群中所有节点的数据副本保持一致。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.cnblogs.com/stateis0/p/9062133.html" target="_blank" rel="noopener">分布式理论(七)—— 一致性协议之 ZAB</a><br><a href="https://www.cnblogs.com/frankltf/p/10392151.html" target="_blank" rel="noopener">ZAB协议</a></p>
 
       
 
@@ -210,29 +195,7 @@ enableLookups：是否反查域名，提高性能应设置false
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SERVER</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT//" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -282,7 +245,7 @@ enableLookups：是否反查域名，提高性能应设置false
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2015/12/09/2015/nginx_tomcat/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/20/2021/zab/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +259,9 @@ enableLookups：是否反查域名，提高性能应设置false
   
 <nav id="article-nav">
   
-    <a href="/2016/03/04/2016/nginx_stop_ip/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nginx限制IP
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/12/09/2015/js/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常用JS</div>
+    <a href="/2021/02/04/2021/user-javascript-and-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chrome插件user-javascript-and-css</div>
       <i class="icon-circle-right"></i>
     </a>
   
